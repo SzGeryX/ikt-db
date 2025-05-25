@@ -3,14 +3,15 @@ CREATE DATABASE mystery CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 use mystery;
 
 CREATE TABLE detective (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255),
     experience int,
     birthYear int
 );
 
+
 CREATE TABLE suspect (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255),
     age int,
     height int,
@@ -20,7 +21,7 @@ CREATE TABLE suspect (
 );
 
 CREATE TABLE question (
-    id int PRIMARY KEY,
+    id int PRIMARY KEY AUTO_INCREMENT,
     questioner int,
     questionee int,
     FOREIGN KEY (questioner) REFERENCES detective(id),
@@ -39,6 +40,7 @@ INSERT INTO suspect VALUES
 (9, 'Brian Thompson', 39, 182, 'Blonde', 'Blue', TRUE),
 (10, 'Sophia Rossi', 27, 162, 'Brown', 'Hazel', FALSE),
 (11, 'Rober Jefferson', 27, 162, 'Blue', 'Green', FALSE);
+
 
 INSERT INTO detective VALUES
 (1, 'Alice Monroe', 12, 1983),
