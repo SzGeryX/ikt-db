@@ -26,12 +26,16 @@ fetch("http://127.0.0.1:3000/suspects")
         married = document.createElement("p")
         married.innerText = `Married: ${element.married ? "Yes" : "No"}`
 
+        img = document.createElement("img")
+        img.src = element.imgPath != null ? element.imgPath : "/images/placeholder.png"
+
         card.appendChild(sname)
         card.appendChild(age)
         card.appendChild(height)
         card.appendChild(eyeColor)
         card.appendChild(hairColor)
         card.appendChild(married)
+        card.appendChild(img)
 
         suspectSec.appendChild(card)        
 
@@ -54,9 +58,13 @@ fetch("http://127.0.0.1:3000/detectives")
         birthYear = document.createElement("p")
         birthYear.innerText = "Birth year: " + element.birthYear
 
+        img = document.createElement("img")
+        img.src = element.imgPath != null ? element.imgPath : "/images/placeholder.png"
+
         card.appendChild(dname)
         card.appendChild(experience)
         card.appendChild(birthYear)
+        card.appendChild(img)
 
         detectiveSec.appendChild(card)        
 
